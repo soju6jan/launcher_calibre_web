@@ -17,6 +17,7 @@
 <script type="text/javascript">
 var package_name = 'launcher_calibre_web';
 var current_data = null;
+var is_installed = "{{ arg['is_installed'] }}"  == 'Installed' ? true : false;
 
 $(document).ready(function(){
 });
@@ -42,6 +43,19 @@ $("body").on('click', '#go_btn', function(e){
 
 $("body").on('click', '#install_btn', function(e){
   e.preventDefault();
+  if ( is_installed ) {
+    document.getElementById("confirm_title").innerHTML = "설치 확인";
+    document.getElementById("confirm_body").innerHTML = "이미 설치 되어 있습니다.<br>재설치시 이전 데이터가 삭제 될 수도 있습니다.<br>그래도 재설치 하시겠습니까?";
+    $('#confirm_button').attr('onclick', "do_install();");
+    $("#confirm_modal").modal();
+    return;
+  } else {
+    do_install()
+  }
+});
+
+
+function do_install() {
   $.ajax({
     url: '/' + package_name + '/ajax/install',
     type: "POST", 
@@ -52,11 +66,7 @@ $("body").on('click', '#install_btn', function(e){
       command_modal_show('설치')
     }
   });
-});
-
-
-
-
+}
 
 </script>    
 {% endblock %}

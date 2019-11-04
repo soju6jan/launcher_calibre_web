@@ -42,7 +42,7 @@ plugin_info = {
     'category_name' : 'launcher',
     'icon' : '',
     'developer' : 'soju6jan',
-    'description' : 'Calibre-web 런처',
+    'description' : 'Calibre-web 런처<br><a href="https://calibre-ebook.com" target="_blank">Calibre 홈페이지</a><br><a href="https://github.com/janeczku/calibre-web" target="_blank">Calibre-Web Git</a>',
     'home' : 'https://github.com/soju6jan/launcher_calibre_web_sjva',
     'more' : '',
 }
