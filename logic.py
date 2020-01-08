@@ -17,10 +17,10 @@ from framework.logger import get_logger
 from framework.util import Util
 
 # 패키지
+package_name = __name__.split('.')[0]
+logger = get_logger(package_name)
 from .model import ModelSetting
 
-package_name = __name__.split('.')[0].split('_sjva')[0]
-logger = get_logger(package_name)
 #########################################################
 import requests
 import urllib

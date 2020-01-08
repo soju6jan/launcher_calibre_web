@@ -22,11 +22,10 @@ from framework.util import Util, AlchemyEncoder
 from system.logic import SystemLogic
             
 # 패키지
+from .plugin import package_name, logger
 from logic import Logic
 from model import ModelSetting
 
-package_name = __name__.split('.')[0].split('_sjva')[0]
-logger = get_logger(package_name)
 
 blueprint = Blueprint(package_name, package_name, url_prefix='/%s' %  package_name, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
 
@@ -43,7 +42,7 @@ plugin_info = {
     'icon' : '',
     'developer' : 'soju6jan',
     'description' : 'Calibre-web 런처<br><a href="https://calibre-ebook.com" target="_blank">Calibre 홈페이지</a><br><a href="https://github.com/janeczku/calibre-web" target="_blank">Calibre-Web Git</a>',
-    'home' : 'https://github.com/soju6jan/launcher_calibre_web_sjva',
+    'home' : 'https://github.com/soju6jan/launcher_calibre_web',
     'more' : '',
 }
 #########################################################
