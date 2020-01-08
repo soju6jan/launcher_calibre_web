@@ -22,7 +22,8 @@ from framework.util import Util, AlchemyEncoder
 from system.logic import SystemLogic
             
 # 패키지
-from .plugin import package_name, logger
+package_name = __name__.split('.')[0]
+logger = get_logger(package_name)
 from logic import Logic
 from model import ModelSetting
 
