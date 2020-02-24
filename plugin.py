@@ -80,6 +80,7 @@ def detail(sub):
 
 
 @blueprint.route('/ajax/<sub>', methods=['GET', 'POST'])
+@login_required
 def ajax(sub):
     logger.debug('AJAX %s %s', package_name, sub)
     if sub == 'setting_save':
