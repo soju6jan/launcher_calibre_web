@@ -171,7 +171,7 @@ class Logic(object):
                         shutil.rmtree(target)
                 commands = [
                     ['msg', u'잠시만 기다려주세요.'],
-                    ['git', 'clone', 'https://github.com/janeczku/calibre-web.git', target],
+                    ['git', 'clone', 'https://github.com/janeczku/calibre-web.git', target, '--depth', '1'],
                     ['python', '-m', 'pip', 'install', '-r', os.path.join(target, 'requirements.txt')],
                     ['msg', u'설치가 완료되었습니다.']
                 ]
