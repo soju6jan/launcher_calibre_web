@@ -24,8 +24,8 @@ from system.logic import SystemLogic
 # 패키지
 package_name = __name__.split('.')[0]
 logger = get_logger(package_name)
-from logic import Logic
-from model import ModelSetting
+from .logic import Logic
+from .model import ModelSetting
 
 
 blueprint = Blueprint(package_name, package_name, url_prefix='/%s' %  package_name, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
@@ -38,11 +38,11 @@ def plugin_unload():
 
 plugin_info = {
     'version' : '0.1.0.0',
-    'name' : 'Calibre-web',
+    'name' : u'Calibre-web',
     'category_name' : 'launcher',
     'icon' : '',
     'developer' : 'soju6jan',
-    'description' : 'Calibre-web 런처<br><a href="https://calibre-ebook.com" target="_blank">Calibre 홈페이지</a><br><a href="https://github.com/janeczku/calibre-web" target="_blank">Calibre-Web Git</a>',
+    'description' : u'Calibre-web 런처<br><a href="https://calibre-ebook.com" target="_blank">Calibre 홈페이지</a><br><a href="https://github.com/janeczku/calibre-web" target="_blank">Calibre-Web Git</a>',
     'home' : 'https://github.com/soju6jan/launcher_calibre_web',
     'more' : '',
 }
@@ -50,9 +50,9 @@ plugin_info = {
 
 # 메뉴 구성.
 menu = {
-    'main' : [package_name, 'Calibre-web'],
+    'main' : [package_name, u'Calibre-web'],
     'sub' : [
-        ['setting', '설정'], ['log', '로그']
+        ['setting', u'설정'], ['log', u'로그']
     ], 
     'category' : 'launcher',
 }  
